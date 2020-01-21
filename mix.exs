@@ -41,7 +41,7 @@ defmodule Justcall.MixProject do
 
   defp package() do
     [
-      name: @name,
+      description: "Justcall API wrapper.",
       files: ~w(lib config .formatter.exs mix.exs README*),
       licenses: ["MIT"],
       links: %{github: @url}
