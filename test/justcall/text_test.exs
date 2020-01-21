@@ -1,7 +1,7 @@
 defmodule Justcall.TextTest do
   use ExUnit.Case, async: true
-  alias Justcall.Text
   alias Justcall.Operation
+  alias Justcall.Text
 
   describe "send/3" do
     test "returns an `Operation` struct" do

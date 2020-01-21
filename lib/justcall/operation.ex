@@ -18,7 +18,7 @@ defmodule Justcall.Operation do
   @doc """
   Returns a `Operation` struct without data.
   """
-  @spec new(metnod :: atom, path :: binary) :: t()
+  @spec new(method :: atom(), path :: binary()) :: t()
   def new(method, path) do
     new(method, path, nil)
   end
@@ -26,7 +26,7 @@ defmodule Justcall.Operation do
   @doc """
   Returns a `Operation` struct with data.
   """
-  @spec new(method :: atom, path :: binary, payload :: term) :: t()
+  @spec new(method :: atom(), path :: binary(), payload :: term()) :: t()
   def new(method, path, payload) do
     struct(%__MODULE__{method: method, data: payload}, url: @base <> path)
   end

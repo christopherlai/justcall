@@ -1,4 +1,8 @@
 defmodule Justcall.Client.Hackney do
+  @moduledoc """
+  Hackney `Client` behaviour.
+  """
+
   require Logger
   @behaviour Justcall.Client
 

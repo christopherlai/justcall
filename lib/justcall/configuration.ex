@@ -19,7 +19,7 @@ defmodule Justcall.Configuration do
   Returns a `Configuration` struct.
   """
   @spec new :: t()
-  def new() do
+  def new do
     config = runtime()
     headers = build_headers(@base_headers, config[:api_key], config[:api_secret])
     json_library = config[:json_library] || Jason
@@ -28,7 +28,7 @@ defmodule Justcall.Configuration do
     struct(__MODULE__, headers: headers, json_library: json_library, client: client)
   end
 
-  @spec build_headers(keyword(), binary, binary) :: keyword()
+  @spec build_headers(headers :: keyword(), key :: binary, secret :: binary) :: keyword()
   defp build_headers(headers, key, secret) do
     Keyword.merge(headers, Authorization: "#{key}:#{secret}")
   end
@@ -38,11 +38,11 @@ defmodule Justcall.Configuration do
     config = Application.get_all_env(:justcall)
 
     unless config[:api_key] do
-      raise "Missing :api_key for :buttondown config."
+      raise "Missing :api_key for :justcall config."
     end
 
     unless config[:api_secret] do
-      raise "Missing :api_secret for :buttondown config."
+      raise "Missing :api_secret for :justcall config."
     end
 
     config

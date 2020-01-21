@@ -17,9 +17,10 @@ defmodule Justcall.MixProject do
 
   defp deps do
     [
+      {:credo, "~> 1.1.0", only: [:dev, :test], runtime: false},
       {:ex_doc, "~> 0.21.2", only: :dev, runtime: false},
-      {:hackney, "~> 1.15"},
-      {:jason, "~> 1.1"}
+      {:hackney, "~> 1.15", optional: true},
+      {:jason, "~> 1.1", optional: true}
     ]
   end
 end
